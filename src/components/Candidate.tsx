@@ -33,13 +33,13 @@ export const Candidate = ({candidates, tableStyle, ...rest}: PropsCandidate) => 
         getCoreRowModel: getCoreRowModel()
     });
 
-    return <div {...rest} className="overflow-x-auto">
+    return <div {...rest} className=" flex items-center">
         <table className={clsx("table table-zebra w-full", tableStyle)}>
             <thead>
             {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup.id}>
                     {headerGroup.headers.map(header => (
-                        <th key={header.id} className="text-lg bg-[#661AE6]">
+                        <th key={header.id} className="text-md md:text-lg bg-[#661AE6] min-w-0 lg:min-w-[104px]">
                             {header.isPlaceholder
                                 ? null
                                 : flexRender(
@@ -53,9 +53,9 @@ export const Candidate = ({candidates, tableStyle, ...rest}: PropsCandidate) => 
             </thead>
             <tbody>
             {table.getRowModel().rows.map(row => (
-                <tr key={row.id} className="hover">
+                <tr key={row.id} className="hover ">
                     {row.getVisibleCells().map(cell => (
-                        <td key={cell.id}>
+                        <td key={cell.id} className="text-sm lg:text-lg">
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                         </td>
                     ))}
