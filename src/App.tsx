@@ -24,7 +24,9 @@ function App() {
                 <div className="flex flex-col items-center justify-evenly gap-4">
                     <div className="drop-shadow-2xl flex justify-center items-center">
                         <div className="absolute blurred ml-20 mb-16 w-1/2 h-1/2 -z-10" />
-                        <MapBrazil svgClassName="w-[350px] h-[350px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]" district={district} changeDistrict={setDistrict} />
+                        <MapBrazil
+                            svgClassName="w-[350px] h-[350px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]"
+                            district={district} changeDistrict={setDistrict} />
                     </div>
                     <div className="flex flex-row space-x-2">
                         <button className="btn btn-primary" onClick={() => setDistrict("BR")}>Brasil</button>

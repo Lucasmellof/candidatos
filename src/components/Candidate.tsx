@@ -39,7 +39,7 @@ export const Candidate = ({candidates, tableStyle, ...rest}: PropsCandidate) => 
             {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup.id}>
                     {headerGroup.headers.map(header => (
-                        <th key={header.id} className="text-md md:text-lg bg-[#661AE6] min-w-0 lg:min-w-[104px]">
+                        <th key={header.id} className="text-md md:text-lg bg-[#661AE6] min-w-[100px] lg:min-w-[130px]">
                             {header.isPlaceholder
                                 ? null
                                 : flexRender(
