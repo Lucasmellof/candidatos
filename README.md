@@ -1,6 +1,6 @@
 # Mapa de votações
 
-🌍 Click [here](https://github.com/Lucasmellof/candidatos/blob/main/README.md) for an English version.
+🌍 Click [here](https://github.com/Lucasmellof/candidatos/blob/main/README.en_us.md) for an English version.
 
 ![](screenshot.png)
 
