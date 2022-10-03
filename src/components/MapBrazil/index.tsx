@@ -29,7 +29,7 @@ const MapBrazil: React.FC<Props> = ({
   fill,
   bg,
   colorLabel = "#121224",
-  colorStroke = "#fdfdfd",
+  colorStroke = "#121232",
   defaultBg = "#8d8d8d",
   defaultFill = "#661AE6",
   district,

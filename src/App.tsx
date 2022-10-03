@@ -16,7 +16,6 @@ function App() {
         getPresidentInfo(findDistrictBySlug(district)).then((info) => setInfo(info));
     }, [district]);
 
-
     return (
         <div className="h-screen w-screen flex flex-col items-center justify-center bg-[#070212] gap-12">
             <h1 className="text-6xl text-center font-bold text-white uppercase italic">Candidatos</h1>

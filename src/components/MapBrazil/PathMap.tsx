@@ -22,7 +22,7 @@ export interface PropsPathMapItem {
 }
 
 export const Path: React.FC<PropsPathMapItem> = ({coordinate, color}) => (
-    <path className="svg-map-path" style={{fill: color, stroke: "#121232"}} d={coordinate} />
+    <path className="svg-map-path" style={{fill: color}} d={coordinate} />
 );
 
 export const PathMap: React.FC<PropsClickablePath> = (
