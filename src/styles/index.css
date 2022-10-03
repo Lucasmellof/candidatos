@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blurred {
+    background-color: #6930c3;
+    border-radius: 100%;
+    filter: blur(5rem);
+    opacity: .70;
+}
+.blurred.rotate {
+    rotate: 20deg;
+}

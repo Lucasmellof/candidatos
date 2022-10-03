@@ -18,16 +18,22 @@ function App() {
 
 
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center">
-            <div>
-                <h1 className="text-6xl text-center text-amber-500">Candidatos</h1>
-            </div>
-            <div className="flex flex-row">
-                <div className="flex flex-col items-center justify-center">
-                    <MapBrazil width={450} height={500} district={district} changeDistrict={setDistrict} />
-                    <p className="text-center">The selected district was {district}</p>
+        <div className="h-screen w-screen flex flex-col items-center justify-center bg-[#070212] gap-12">
+            <h1 className="text-6xl text-center font-bold text-white uppercase italic">Candidatos</h1>
+
+            <div className="flex flex-row justify-between gap-x-12">
+                <div className="flex flex-col items-center justify-evenly">
+                   <div className="drop-shadow-2xl flex justify-center items-center">
+                       <div className="absolute blurred w-1/2 h-1/2 -z-10" />
+                       <MapBrazil  width={500} height={500} district={district} changeDistrict={setDistrict} />
+                   </div>
+                    <div className="flex flex-row space-x-2">
+                        <button className="btn btn-primary" onClick={() => setDistrict("BR")}>Brasil</button>
+                        <button className="btn btn-primary" onClick={() => setDistrict("ZZ")}>Exterior</button>
+                    </div>
                 </div>
-                <div className="mt-8 ml-8 justify-center">
+                <div className="px-2 py-2 mt-8 ml-8 justify-center drop-shadow-2xl rounded-lg">
+                    <div className="absolute blurred w-full h-full" />
                     {info && <Candidate candidates={info} />}
                 </div>
             </div>

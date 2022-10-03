@@ -2,14 +2,16 @@ import React, {HTMLAttributes} from "react";
 
 import {CandidateInfo} from "../data/info";
 import {createColumnHelper, flexRender, getCoreRowModel, useReactTable} from "@tanstack/react-table";
+import clsx from "clsx";
 
 interface PropsCandidate extends HTMLAttributes<HTMLDivElement> {
     candidates: CandidateInfo[];
+    tableStyle?: string;
 }
 
 const columnHelper = createColumnHelper<CandidateInfo>()
 
-export const Candidate = ({candidates, ...rest}: PropsCandidate) => {
+export const Candidate = ({candidates, tableStyle, ...rest}: PropsCandidate) => {
     const columns: any = [
         columnHelper.accessor("name", {
             header: "Nome",
@@ -17,7 +19,7 @@ export const Candidate = ({candidates, ...rest}: PropsCandidate) => {
         }),
         columnHelper.accessor("votes", {
             header: "Votos",
-            cell: (info) => info.getValue()
+            cell: (info) => Intl.NumberFormat("pt-BR").format(info.getValue())
         }),
         columnHelper.accessor("party", {
             header: "Partido",
@@ -26,18 +28,18 @@ export const Candidate = ({candidates, ...rest}: PropsCandidate) => {
     ];
 
     const table = useReactTable({
-        data: candidates.sort((a,b) => a.sequence - b.sequence),
+        data: candidates.sort((a, b) => a.sequence - b.sequence),
         columns,
         getCoreRowModel: getCoreRowModel()
     });
 
     return <div {...rest} className="overflow-x-auto">
-        <table className="table table-zebra w-full">
+        <table className={clsx("table table-zebra w-full", tableStyle)}>
             <thead>
             {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup.id}>
                     {headerGroup.headers.map(header => (
-                        <th key={header.id}>
+                        <th key={header.id} className="text-lg bg-[#661AE6]">
                             {header.isPlaceholder
                                 ? null
                                 : flexRender(
@@ -51,7 +53,7 @@ export const Candidate = ({candidates, ...rest}: PropsCandidate) => {
             </thead>
             <tbody>
             {table.getRowModel().rows.map(row => (
-                <tr key={row.id}>
+                <tr key={row.id} className="hover">
                     {row.getVisibleCells().map(cell => (
                         <td key={cell.id}>
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -63,12 +65,3 @@ export const Candidate = ({candidates, ...rest}: PropsCandidate) => {
         </table>
     </div>
 };
-/* {candidates?.sort((a, b) => a.sequence - b.sequence).map((candidate) => (
-            <div className="flex flex-row" key={candidate.number}>
-                <p className="mx-4">{candidate.name}</p>
-                <p className="mx-4">{candidate.number}</p>
-                <p className="mx-4">{candidate.votes}</p>
-                <p className="mx-4">{candidate.vote_percentage}</p>
-                <p className="mx-4">{candidate.vice_president}</p>
-            </div>
-        ))} */

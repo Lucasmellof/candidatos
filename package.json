@@ -12,6 +12,7 @@
     "@tanstack/react-table": "^8.5.15",
     "autoprefixer": "^10.4.12",
     "axios": "^0.27.2",
+    "clsx": "^1.2.1",
     "postcss": "^8.4.17",
     "react": "^18.2.0",
     "react-brazil-map": "^1.0.1",

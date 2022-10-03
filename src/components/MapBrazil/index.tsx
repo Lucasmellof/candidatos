@@ -31,7 +31,7 @@ const MapBrazil: React.FC<Props> = ({
   colorLabel = "#121224",
   colorStroke = "#fdfdfd",
   defaultBg = "#8d8d8d",
-  defaultFill = "#0099ff",
+  defaultFill = "#661AE6",
   district,
   changeDistrict,
 }) => {
