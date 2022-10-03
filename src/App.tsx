@@ -23,7 +23,7 @@ function App() {
             <div className="flex flex-row justify-between gap-x-12">
                 <div className="flex flex-col items-center justify-evenly">
                    <div className="drop-shadow-2xl flex justify-center items-center">
-                       <div className="absolute blurred w-1/2 h-1/2 -z-10" />
+                       <div className="absolute blurred ml-20 mb-16 w-1/2 h-1/2 -z-10" />
                        <MapBrazil  width={500} height={500} district={district} changeDistrict={setDistrict} />
                    </div>
                     <div className="flex flex-row space-x-2">
