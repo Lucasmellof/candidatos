@@ -145,5 +145,5 @@ export function getVoteInfoByInfo(info?: CityInfo): string | null {
     return null;
   }
   const uf = info.slug.toLowerCase();
-  return `https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/${uf}/${uf}-c0001-e000544-r.json`;
+  return `https://resultados.tse.jus.br/oficial/ele2022/545/dados-simplificados/${uf}/${uf}-c0001-e000545-r.json`;
 }
