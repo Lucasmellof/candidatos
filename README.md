@@ -1,4 +1,4 @@
-# ! Infelizmente o TSE configurou o CORS na API deles, impossibilitando o funcionamento do website. 
+# Infelizmente o TSE configurou o CORS na API deles, impossibilitando o funcionamento do website. 
  
 # Mapa de votações
 
